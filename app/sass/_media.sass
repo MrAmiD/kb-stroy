@@ -8,10 +8,23 @@
 
 //Large: ≥992px
 +media-breakpoint-down(lg)
-  /**/
+  .main-slider
+    .slick-dots
+      left: calc(50% - 480px + 15px)
+    .slick-prev
+      left: calc(50% + 480px - 135px)
+    .slick-next
+      left: calc(50% + 480px - 70px)
 
 //Medium: ≥768px
 +media-breakpoint-down(md)
+  .main-slider
+    .slick-dots
+      left: calc(50% - 360px + 15px)
+    .slick-prev
+      left: calc(50% + 360px - 135px)
+    .slick-next
+      left: calc(50% + 360px - 70px)
   .content
     table
       overflow-x: scroll
@@ -21,14 +34,60 @@
         display: block
         min-width: 500px
         width: 100%
+  #my-header .lvl1-r .logo-h
+    flex-direction: column
+  #my-header .lvl1-r .logo-h .discr
+    margin-left: 12px
+    margin-top: 10px
 //Small: ≥576px
 +media-breakpoint-down(sm)
-  /**/
+  .main-slider .item .slider-content .h2, .main-slider .item .slider-content h2
+    font-size: 22px
+  #my-header
+    .mail-c
+      display: none
+  #my-header .lvl1-r .logo-h
+    align-items: flex-start
+  #my-header .lvl1-r .logo-h .discr
+    margin-left: 0px
+  .phone-h .txt-p a.link
+    font-size: 20px
+  #my-header .lvl1-r
+    padding: 20px 0px
+  #my-header .lvl1-r .logo-h img
+    margin-top: 0px
+  .phone-h .ico-p
+    display: none
+  .lvl2-c
+    display: none
+  .slider-cc
+    margin-top: 0px
+  .phone-h
+    justify-content: space-between
+  .phone-h .txt-p
+    margin-left: 0px
+  .product-sec .prod-cat-r .col-12
+    margin: 0px
 //Extra small: >0
 +media-breakpoint-down(xs)
-	/**/
-
-
+  .main-slider .item
+    max-height: 70vh
+  #my-header .lvl1-r .logo-h
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 15px
+  #my-header .lvl1-r .logo-h .discr p
+    margin-left: 15px
+  #my-header .lvl1-r .logo-h img
+    width: 160px
+    min-width: 1px
+  .lvl1-c
+    padding: 0px
+  #my-header .lvl1-r .logo-h .discr
+    margin-top: 0px
+  .preim-about-sec .block-r .block-i
+    padding: 30px 15px
 /*==========  Mobile First  ==========*/
 
 //Extra small: <576px
@@ -40,7 +99,8 @@
 
 //Medium: ≤768px
 +media-breakpoint-up(md)
-  /**/
+  .menu-m-b
+    display: none
 
 
 

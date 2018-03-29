@@ -9,28 +9,28 @@
 	color: #989898
 	opacity: 1
 	font-size: 18px
-	font-weight: 300
+	font-weight: 500
 	font-family: $default-font
 
 *:-moz-placeholder
 	color: #989898
 	opacity: 1
 	font-size: 18px
-	font-weight: 300
+	font-weight: 500
 	font-family: $default-font
 
 *::-moz-placeholder
 	color: #989898
 	opacity: 1
 	font-size: 18px
-	font-weight: 300
+	font-weight: 500
 	font-family: $default-font
 
 *:-ms-input-placeholder
 	color: #989898
 	opacity: 1
 	font-size: 18px
-	font-weight: 300
+	font-weight: 500
 	font-family: $default-font
 
 body input:focus:required:invalid,
@@ -46,7 +46,7 @@ body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.75
+	line-height: 1.2
 	font-family: $default-font
 	//overflow-x: hidden
 	opacity: 1
@@ -66,7 +66,7 @@ body
 .h2, h2
 	font-family: $default-font
 	font-weight: 900
-	font-size: 25px
+	font-size: 32px
 	color: $dark
 .h3, h3, .h4, h4, .h5, h5
 	font-family: $default-font
@@ -76,9 +76,9 @@ body
 
 p
 	font-family: $default-font
-	font-size: 16px
+	font-size: 14px
 	color: $dark
-	font-weight: 300
+	font-weight: 500
 	line-height: 26px
 a
 	text-decoration: none
@@ -97,7 +97,7 @@ input
 	display: inline-block
 	border: solid 1px #d9d9d9
 	font-size: 18px
-	font-weight: 300
+	font-weight: 500
 	height: 36px
 	line-height: 36px
 	padding-left: 20px
@@ -207,7 +207,6 @@ input
 	-webkit-border-radius: 35px
 	-moz-border-radius: 35px
 	border-radius: 35px
-	display: none
 	-webkit-transition: all 0.3s linear
 	-moz-transition: all 0.3s ease
 	-ms-transition: all 0.3s ease
@@ -247,13 +246,13 @@ input
 .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
 	height: 2px
 	background: $dark
-	width: 24px
+	width: 16px
 .hamburger--emphatic .hamburger-inner:after
 	top: 7px
 .hamburger-inner:before
-	top: -7px
+	top: -5px
 .hamburger-inner:after
-	bottom: -7px
+	bottom: -5px
 .hamb-cont
 	text-align: right
 	display: inline-block
@@ -262,6 +261,9 @@ input
 .hamburger-box
 	display: flex
 	justify-content: center
+	border: solid 2px $dark
+	width: 40px
+	height: 40px
 .menu-m-b
 	display: flex
 	align-items: center
@@ -286,7 +288,7 @@ html.mm-opening .mm-menu~.mm-slideout
 		font-size: 18px
 		line-height: 50px
 		padding: 0px
-		font-weight: 300
+		font-weight: 500
 	.mm-next:after, .mm-prev:before
 		width: 15px
 		height: 15px
@@ -359,6 +361,7 @@ html.mm-opening .mm-menu~.mm-slideout
 		font-size: 30px
 		text-transform: uppercase
 		position: relative
+		font-weight: 900
 		//padding-bottom: 55px
 		margin-bottom: 14px
 		//&:after
@@ -372,44 +375,34 @@ html.mm-opening .mm-menu~.mm-slideout
 		//	bottom: -6px
 	h2
 		font-size: 24px
-		font-weight: 500
+		font-weight: 900
 		margin: 15px 0
 		margin-top: 30px
-		text-transform: uppercase
-		color: $accent
 	h3
 		font-size: 22px
-		font-weight: 500
+		font-weight: 900
 		margin: 15px 0
 		margin-top: 30px
-		text-transform: uppercase
-		color: $accent
 	h4
 		font-size: 20px
 		font-weight: 500
 		margin: 15px 0
 		margin-top: 30px
-		text-transform: uppercase
-		color: $accent
 	h5
 		font-size: 18px
 		font-weight: 500
 		margin: 15px 0
 		margin-top: 30px
-		text-transform: uppercase
-		color: $accent
 	h6
 		font-size: 16px
 		font-weight: 500
 		margin: 15px 0
 		margin-top: 30px
-		text-transform: uppercase
-		color: $accent
 	b
-		font-size: 16px
+		font-size: 14px
 		font-weight: 900
 	p
-		font-size: 16px
+		font-size: 14px
 		line-height: 26px
 		margin-bottom: 20px
 		max-width: 850px
@@ -469,18 +462,16 @@ html.mm-opening .mm-menu~.mm-slideout
 		li
 			position: relative
 			font-weight: 500
-			font-size: 16px
+			font-size: 14px
 			margin-bottom: 20px
 			&:before
 				content: ''
-				display: block
-				width: 10px
-				height: 10px
 				position: absolute
-				left: -25px
-				top: 7px
+				width: 16px
+				height: 2px
 				background: $accent
-				border-radius: 50%
+				left: -26px
+				top: 7px
 			ul
 				margin-top: 0px
 				li
@@ -735,12 +726,21 @@ html.mm-opening .mm-menu~.mm-slideout
 		background: darken($accent, 5)
 		color: #ffffff
 .btn-accent
-	background: $accent
-	text-align: right
+	background-color: $accent
 	padding: 10px 45px
-	border-radius: 5px
-	font-size: 23px
+	border-radius: 500px
+	font-size: 12px
+	font-weight: 700
 	color: #FFFFFF
+	text-align: center
+	background-image: -moz-linear-gradient( -62deg, rgb(28,104,200) 0%, rgb(21,77,179) 100%)
+	background-image: -webkit-linear-gradient( -62deg, rgb(28,104,200) 0%, rgb(21,77,179) 100%)
+	background-image: -ms-linear-gradient( -62deg, rgb(28,104,200) 0%, rgb(21,77,179) 100%)
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	border-color: transparent
+
 	&:hover, &:focus
 		background: $dark
 		color: #FFFFFF
@@ -829,7 +829,7 @@ html.mm-opening .mm-menu~.mm-slideout
 		padding-left: 10px
 		border: solid 1px #d9d9d9
 		font-size: 18px
-		font-weight: 300
+		font-weight: 500
 		height: 36px
 		line-height: 36px
 		border-bottom-left-radius: 5px
@@ -885,35 +885,52 @@ html.mm-opening .mm-menu~.mm-slideout
 	background-image: none
 	background: none
 
+.lvl1-c
+	border-bottom: 1px $grey solid
+.lvl2-c
+	border-bottom: 1px $grey solid
+	padding: 15px 0px
+
+.slider-cc
+	margin-top: -67px
+
 .main-menu
+	border-radius: 13px
+	display: inline-block
 	ul
 		list-style: none
 		margin: 0
-		margin-top: 6px
 		padding: 0px
 		text-align: right
-		display: flex
+		display: inline-flex
 		align-items: center
-		justify-content: flex-end
+		justify-content: flex-start
 		margin-right: -12px
 		li
 			display: inline-block
-			margin-left: 5px
 			position: relative
 			z-index: 2
 			//padding: 31px 0
 			&:first-child
 				margin-left: 0px
+				a
+					border-top-left-radius: 13px
+					border-bottom-left-radius: 13px
+					padding-left: 30px
+			&:last-child
+				a
+					border-top-right-radius: 13px
+					border-bottom-right-radius: 13px
+					padding-right: 30px
 			a
-				font-size: 16px
+				font-size: 14px
 				font-weight: 500
-				color: $dark
-				padding: 8px 12px
-				border-radius: 50px
-				&:hover
-					background-image: -moz-linear-gradient( -16deg, rgb(255,255,255) 0%, rgb(18,16,11) 100%)
-					background-image: -webkit-linear-gradient( -16deg, rgb(255,255,255) 0%, rgb(18,16,11) 100%)
-					background-image: -ms-linear-gradient( -16deg, rgb(255,255,255) 0%, rgb(18,16,11) 100%)
+				color: #FFFFFF
+				display: block
+				background: $dark
+				padding: 6px 15px
+				&:hover, &:focus
+					text-decoration: none
 					background: $accent
 			ul
 				padding: 0px
@@ -951,154 +968,365 @@ html.mm-opening .mm-menu~.mm-slideout
 
 
 .main-slider
+	width: 100%
+	margin-bottom: 0
+	overflow: hidden
+	max-height: 630px
+	//top: -9px
 	.item
 		position: relative
-		.content-c
-			position: absolute
-			bottom: 70px
-			z-index: 2
-			color: #FFFFFF
-			background: rgba($dark, 0.9)
-			width: 450px
-			padding: 22px 50px
-			font-size: 16px
-			font-weight: 700
-		.prev
-			min-height: 600px
-			background-size: cover
-			background-position: center
-			background-repeat: no-repeat
+		height: 630px
+		width: 100%
+		background: $grey-l
+		background-size: cover
+		&.slick-active
+			.slider-content
+				opacity: 1
+		.slider-content
+			//top: 50%
+			//transform: translateY(-50%)
+			//position: absolute
+			background: rgba($dark, 0.87)
+			max-width: 560px
+			border-radius: 13px
+			width: 100%
+			opacity: 0
+			transition: opacity 1s ease, left .5s ease
+			transition-delay: .2s
+			text-align: left
+			padding: 30px
+			padding-top: 17px
+			padding-bottom: 17px
+			margin-bottom: 15px
+			.h2, h2
+				font-size: 30px
+				font-weight: 900
+				color: #FFFFFF
+				position: relative
+				line-height: 1.2
+			p
+				font-size: 25px
+				color: $dark
+				line-height: 25px
+				font-weight: 500
+				margin-bottom: 35px
+			.top-txt
+				font-weight: 900
+				font-size: 16px
+				color: #FFFFFF
+				position: relative
+				top: -50px
+		.bg
+			width: 100%
+			min-height: 450px
+			background-size: cover!important
+			opacity: 1
+			background-position: right!important
 	.slick-arrow
-		transform: scale(2)
-		background: rgba(#FFFFFF, 0.3)
-		border-radius: 60px
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		background-color: $grey-l
+		bottom: -2px
+		top: auto
+		object
+			width: 25px
+			z-index: -1
+			position: relative
+	.slick-prev
+		left: calc(50% + 445px)
+		z-index: 1
+		transition: background-color .3s ease
+		svg
+			transform: scale(1.5)
+		path
+			fill: $dark
+		&:hover
+			background-color: rgba(#ffffff, 0.8)
+		object
+			top: -2px
+			left: -3px
+	.slick-next
+		left: calc(50% + 510px)
+		z-index: 1
+		transition: background-color .3s ease
+		svg
+			transform: scale(1.5)
+		path
+			fill: $dark
+		&:hover
+			background-color: rgba(#ffffff, 0.8)
+		object
+			top: -2px
+			left: 3px
+	.slick-next:before, .slick-prev:before
+		display: none
+	.slick-dots
+		bottom: 25px
+		width: auto
+		//background-color: rgba(0, 0, 0, 0.412)
+		left: calc(50% - 570px)
+		border-radius: 50px
+		li
+			margin: 0px
+			&:first-child
+				margin-left: 5px
+			&:last-child
+				margin-right: 5px
+	.slick-dots li.slick-active button:before
+		color: $accent
+	.slick-dots li button:before
+		color: $grey-l
+		opacity: 1
+		font-size: 10px
+		line-height: 22px
+.slick-dotted.slick-slider
+	margin-bottom: 0px
+
+.svg-txt
+	display: flex
+	align-items: center
+	.svg-c
+		display: flex
+		align-items: center
+	.txt
+		margin-left: 8px
+		a
+			font-size: 12px
+			font-weight: 700
+
+.phone-h
+	display: flex
+	align-items: center
+	justify-content: flex-end
+	.ico-p
+		border: solid 2px $accent
+		width: 40px
+		height: 40px
 		display: flex
 		align-items: center
 		justify-content: center
-		z-index: 2
-		&.slick-next
-			right: 30px
-		&.slick-prev
-			left: 30px
-		svg
-			position: relative
-			top: 0px
-			path
-				fill: $accent
-	.slick-next:before, .slick-prev:before
-		display: none
+	.txt-p
+		display: flex
+		flex-direction: column
+		margin-left: 13px
+		a
+			line-height: 1.2
+			&.link
+				font-size: 22px
+				font-weight: 900
+			&.call-back
+				font-size: 12px
+				font-weight: 700
+				color: $accent
+				text-decoration: underline
+
+#my-header
+	.lvl1-r
+		align-items: center
+		padding: 40px 0
+		.logo-h
+			display: flex
+			align-items: center
+			img
+				max-width: 100%
+				min-width: 183px
+				margin-top: -13px
+			.discr
+				margin-left: 23px
+				max-width: 272px
+				p
+					margin-bottom: 0px
+					font-size: 12px
+					font-weight: 700
+					line-height: 1.2
+
+.product-sec
+	.h2
+		margin-top: 50px
+		margin-bottom: 50px
+	.prod-cat-r
+		margin-left: -7px
+		margin-right: -7px
+		.col-12
+			margin-bottom: 14px
+			padding: 7px
+		.prod-ci
+			border: solid 1px $grey-l
+			padding: 15px
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+		.h3
+			font-weight: 900
+			font-size: 18px
+			text-align: center
+			min-height: 50px
+		.svg-c
+			display: flex
+			justify-content: center
+			margin-bottom: 20px
+		.btn-c
+			margin-top: 15px
+			.svg-c
+				display: flex
+				justify-content: flex-start
+				margin-bottom: 0px
+		.ul-c
+			max-height: 250px
+			overflow: auto
+			+custom-scroll($accent)
+
+.ul-c
+	padding: 0px
+	margin: 0px
+	list-style: none
+	padding-left: 28px
+	li
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			width: 16px
+			height: 2px
+			background: $accent
+			left: -26px
+			top: 11px
+		a
+			font-weight: 700
+			font-size: 12px
+
+.preim-about-sec
+	.block-r
+		margin-left: -14px
+		margin-right: -14px
+		margin-top: 41px
+		.col-12
+			margin-bottom: 10px
+			padding: 0 7px
+		h1, h2, h3, h4
+			margin-top: 0px
+		h2
+			font-size: 36px
+		.block-i
+			background: $grey-l
+			height: 100%
+			padding: 70px 50px
+			&.content
+				p, li, a
+					font-weight: 700
+	.preim-b
+		h2
+			margin-bottom: 40px
+	.preim-c
+		p
+			margin-bottom: 0px
+		a 
+			&:hover
+				text-decoration: none
+		.preim-i
+			display: flex
+			align-items: center
+			margin-bottom: 25px
+			&:hover
+				cursor: pointer
+				.svg-c
+					background: $accent
+					svg:nth-of-type(1)
+						display: none
+					svg:nth-of-type(2)
+						display: block
+				p
+					color: $accent
+			.svg-c
+				background: #FFFFFF
+				transition: all .3s ease
+				border-radius: 500px
+				height: 90px
+				width: 90px
+				min-height: 90px
+				min-width: 90px
+				display: flex
+				align-items: center
+				justify-content: center
+				cursor: pointer
+				margin-right: 19px
+				svg:nth-of-type(2)
+					display: none
+
+.stage-work
+	margin-top: 65px
+	.stage-r
+		margin-top: 30px
+		.stage-i
+			display: flex
+			flex-direction: column
+			align-items: center
+			&:hover
+				cursor: pointer
+				.txt-s p
+					color: $accent
+				.svg-c
+					background: $accent
+					&:after
+						border-color: $accent transparent transparent transparent
+				.num-s
+					background: $accent2
+			.svg-c
+				background: $accent2
+				display: inline-flex
+				border-radius: 2px
+				width: 54px
+				height: 54px
+				justify-content: center
+				align-items: center
+				position: relative
+				margin-bottom: 17px
+				&:after
+					content: ''
+					position: absolute
+					bottom: -10px
+					width: 0
+					height: 0
+					border-style: solid
+					border-width: 10px 5px 0 5px
+					border-color: $accent2 transparent transparent transparent
+			.num-s
+				background: $accent
+				color: #FFFFFF
+				width: 26px
+				height: 26px
+				display: flex
+				align-items: center
+				justify-content: center
+				font-weight: 900
+				font-size: 14px
+				border-radius: 40px
+				position: relative
+				margin-bottom: 15px
+				&:not(.last):after
+					content: ''
+					position: absolute
+					background-image: url("../img/stageBg.png")
+					width: 119px
+					height: 6px
+					top: 50%
+					transform: translateY(-50%)
+					left: 29px
+			.txt-s
+				p
+					font-size: 14px
+					font-weight: 900
+					margin-bottom: 0px
+					text-align: center
+					line-height: 1.2
 #my-footer
 	min-height: 400px
+	background: $accent2
+	margin-top: 50px
 /*Project end*/
 
-/*mail start*/
-.mail
-	width: 600px
-	margin: auto
-	.header-m
-		white-space: nowrap
-		.svg-cont
-			display: inline-block
-			width: 44%
-		.btn-c
-			display: inline-block
-			width: 50%
-			text-align: right
-			&>a
-				display: inline-block 
-				font-family: 'Museo Sans Cyrl', sans-serif
-				font-weight: 900
-				color: #1a1a1a
-				background: #ffc71c
-				border-radius: 50px
-				text-align: center
-				font-size: 14px
-				line-height: 30px
-				padding: 0 25px
-				position: relative
-				text-decoration: none!important
-	.main-cont
-		background: #fcc419
-		padding: 50px 37px
-		margin-top: 10px
-		margin-bottom: 26px
-	.h1m
-		font-weight: 700
-		font-size: 28px
-		line-height: 1.1
-		font-family: 'Bebas Neue', sans-serif
-		text-transform: uppercase
-		margin-bottom: 37px
-		color: #1a1a1a
-	.h2m
-		font-weight: 900
-		font-size: 15px
-		line-height: 1.1
-		font-family: 'Museo Sans Cyrl', sans-serif
-		margin-bottom: 1px
-		margin-bottom: 45px
-		color: #1a1a1a
-	.link-c
-		margin-bottom: 45px
-		.item
-			.discr
-				font-family: 'Museo Sans Cyrl', sans-serif
-				font-weight: 900
-				font-size: 15px
-				color: #1a1a1a
-			a
-				color: #FFFFFF
-				font-size: 15px
-				text-decoration: underline
-				font-family: 'Museo Sans Cyrl', sans-serif
-				&:hover
-					text-decoration: none
-	.additions
-		.item
-			.discr
-				font-family: 'Museo Sans Cyrl', sans-serif
-				font-weight: 700
-				font-size: 15px
-				color: #1a1a1a
-			a
-				color: #FFFFFF
-				font-size: 15px
-				text-decoration: underline
-				font-family: 'Museo Sans Cyrl', sans-serif
-				&:hover
-					text-decoration: none
-	.footer-m
-		background: #1a1a1a
-		padding: 30px 25px
-		padding-bottom: 20px
-	table
-		width: 100%
-		a
-			color: #FFFFFF
-			font-size: 10px
-			text-transform: uppercase
-			display: inline-block
-			font-family: 'Museo Sans Cyrl', sans-serif
-			text-decoration: none
-			white-space: nowrap
-			.txt
-				display: inline-block
-				padding-left: 5px
-				font-family: 'Museo Sans Cyrl', sans-serif
-				line-height: 21px
-				vertical-align: top
-		tr
-			td
-				color: #FFFFFF
-				font-size: 10px
-				text-transform: uppercase
-				padding-bottom: 10px
-				font-family: 'Museo Sans Cyrl', sans-serif
-				white-space: nowrap
-				.txt-a
-					color: #fcc419
-					font-family: 'Museo Sans Cyrl', sans-serif
 
-/*mail end*/
 
 @import "media" // Всегда в конце
