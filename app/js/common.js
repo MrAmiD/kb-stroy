@@ -281,15 +281,7 @@ $(function() {
         $('#stickyMenu-btn').removeClass('is-active');
         $('.mmenu2').removeClass('active');
     });
-
-    $(window).scroll(function(){ // scroll event
-        scrollAnimate($('.slider-cc'), $('.item-t[data-sec=".slider-cc"]'));
-        scrollAnimate($('.product-sec'), $('.item-t[data-sec=".product-sec"]'));
-        scrollAnimate($('.preim-about-sec'), $('.item-t[data-sec=".preim-about-sec"]'));
-        scrollAnimate($('.stage-work'), $('.item-t[data-sec=".stage-work"]'));
-        scrollAnimate($('.projects-sec'), $('.item-t[data-sec=".projects-sec"]'));
-        scrollAnimate($('.quest-sec'), $('.item-t[data-sec=".quest-sec"]'));
-    });
+ 
 //    Sticky menu open end
 
 
