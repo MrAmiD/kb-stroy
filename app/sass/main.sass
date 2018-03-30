@@ -1559,7 +1559,7 @@ html.mm-opening .mm-menu~.mm-slideout
 	background: $accent2
 	position: absolute
 	top: 0px
-	z-index: 2
+	z-index: 3
 	&:after
 		content: ''
 		position: absolute
@@ -1937,6 +1937,33 @@ html.mm-opening .mm-menu~.mm-slideout
 	.projects-sec
 		border-bottom: none
 		padding-bottom: 0px
+
+.left-cat
+	position: sticky
+	top: 15px
+	.h3 
+		a
+			color: $dark
+	ul
+		padding-left: 26px
+		li
+			margin-bottom: 0px
+			&:before
+				top: 10px
+		a
+			color: $dark
+			font-size: 12px
+			font-weight: 700
+.product-sec.invert-s
+	margin-bottom: 30px
+	.prod-cat-r
+		.h3
+			min-height: auto
+		.col-12
+			margin-bottom: 0px
+		.prod-ci
+			border: solid 1px $grey
+
 /*Project end*/
 
 
