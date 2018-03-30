@@ -281,6 +281,23 @@ $(function() {
         $('#stickyMenu-btn').removeClass('is-active');
         $('.mmenu2').removeClass('active');
     });
+    $(document).on('click', '.garmoshka .btn-trigger', function () {
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $(this).next().removeClass('active');
+            $(this).next().slideUp();
+            setTimeout(function() { calcSticky(); }, 1000);//Делаем перерасчёт для сайдбара из-за измененмя высоты окна
+        }else{
+            $(this).addClass('active');
+            $(this).next().addClass('active');
+            $(this).next().slideDown();
+            setTimeout(function() { calcSticky(); }, 1000);//Делаем перерасчёт для сайдбара из-за измененмя высоты окна
+        }
+
+
+
+
+    });
  
 //    Sticky menu open end
 
