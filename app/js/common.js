@@ -1,12 +1,19 @@
-function scrollAnimate(selector){
-    var absOffsetTop = selector.offset().top - $(window).height();
+function scrollAnimate(selector, selectorAdd){
+    var absOffsetTop = selector.offset().top - 170;
     var scrollWin = $(window).scrollTop();
-    if (scrollWin >= absOffsetTop - 100) {
+
+    var bottomSelectorPosition = selector.offset().top + selector.outerHeight();
+
+    if (scrollWin >= absOffsetTop) {
         //console.log('addClass animate');
-        selector.addClass('animate');
+        selectorAdd.addClass('active');
     } else {
-        //console.log('removeClass animate')
-        selector.removeClass('animate');
+        console.log('removeClass active')
+        selectorAdd.removeClass('active');
+    }
+
+    if(scrollWin >= bottomSelectorPosition - 170){
+        selectorAdd.removeClass('active');
     }
 };
 function MainSliderInit(){//слайдер на главной странице
@@ -86,6 +93,79 @@ function feedbackSliderSliderInit(){//слайдер на главной стр�
         '</button>'
     });
 }
+
+
+//Sticky scroll start
+var $sticky =  $('.sticky-bar'),//объект стики
+    $stickyrStopper = $('.sticky-stopper'),//объект до куда плывет бар
+    generalSidebarHeight,//высота стики бара
+    stickyTop,//отступ внутри body
+    stickOffset,//отступ от топа окна
+    stickyStopperPosition,//позиция объекта, до которого плывет стики бар
+    stopPoint,//конкретная точка, до которого плывет стики бар
+    diff,//Позиция внутри контейнера, при абсолютном позицианировании
+    parentOffsetTop;
+
+function calcSticky(){
+    $sticky = $('.sticky-bar');
+    $stickyrStopper = $('.sticky-stopper');
+    generalSidebarHeight = $sticky.innerHeight();
+    stickyTop = $sticky.offset().top;
+    parentOffsetTop = $sticky.parent().offset().top;
+    stickOffset = 0;
+    stickyStopperPosition = $stickyrStopper.offset().top;
+    stopPoint = stickyStopperPosition - generalSidebarHeight - stickOffset;
+    diff = stopPoint + stickOffset;
+    if (!!$sticky.offset()) { // make sure ".sticky" element exists
+        generalSidebarHeight = $sticky.innerHeight();
+        stickyTop = $sticky.offset().top;
+        stickOffset = 0;
+        stickyStopperPosition = $stickyrStopper.offset().top;
+        stopPoint = stickyStopperPosition - generalSidebarHeight - stickOffset;
+        diff = stopPoint + stickOffset;
+    }
+}
+
+$( document ).ready(function() {
+
+    $(window).scroll(function(){ // scroll event
+        var windowTop = $(window).scrollTop(); // returns number
+        if (stopPoint < windowTop) {
+            // console.log('stopPoint < windowTop');
+            $sticky.css({ position: 'absolute', top: diff });
+        } else if (stickyTop <= windowTop+stickOffset) {
+            // console.log('stickyTop < windowTop+stickOffset');
+            $sticky.css({ position: 'fixed', top: stickOffset });
+        }else if(parentOffsetTop >= windowTop){//Родитель стики
+            // console.log('parentOffsetTop >= windowTop');
+            $sticky.css({position: 'absolute', top: 'initial'});
+        }else if(stickyTop > parentOffsetTop){
+            $sticky.css({ position: 'fixed', top: stickOffset });
+        }
+        if(stickyTop < parentOffsetTop){
+            $sticky.css({position: 'absolute', top: 'initial'});
+        }
+
+        // else {
+        // 		 console.log('else');
+        // 		// console.log('--stopPoint=', stopPoint);
+        // 		// console.log('--windowTop=', windowTop);
+        //     $sticky.css({position: 'absolute', top: 'initial'});
+        // }
+    });
+
+    calcSticky();
+    $(window).scroll();
+});
+
+$(window).resize(function () {
+
+    setTimeout(function() { calcSticky(); }, 2000);
+    console.log('resized win')
+});
+//Sticky scroll end
+
+
 
 $(function() {
     /*datepicker start*/
@@ -181,4 +261,36 @@ $(function() {
         //bugfix fixed menu 3 END
         $("#my-header").css({ top: 0});
     });
+
+
+
+
+//    Sticky menu open start
+    $('#my-menu2').html($('.close-c').html() + $('.main-menu').html());
+
+    $(document).on('click', '#stickyMenu-btn', function () {
+        if($(this).hasClass('is-active')){
+            $(this).removeClass('is-active');
+            $('.mmenu2').removeClass('active');
+        }else{
+            $(this).addClass('is-active');
+            $('.mmenu2').addClass('active');
+        }
+    });
+    $(document).on('click', '.close-btn-cc .close-btn', function () {
+        $('#stickyMenu-btn').removeClass('is-active');
+        $('.mmenu2').removeClass('active');
+    });
+
+    $(window).scroll(function(){ // scroll event
+        scrollAnimate($('.slider-cc'), $('.item-t[data-sec=".slider-cc"]'));
+        scrollAnimate($('.product-sec'), $('.item-t[data-sec=".product-sec"]'));
+        scrollAnimate($('.preim-about-sec'), $('.item-t[data-sec=".preim-about-sec"]'));
+        scrollAnimate($('.stage-work'), $('.item-t[data-sec=".stage-work"]'));
+        scrollAnimate($('.projects-sec'), $('.item-t[data-sec=".projects-sec"]'));
+        scrollAnimate($('.quest-sec'), $('.item-t[data-sec=".quest-sec"]'));
+    });
+//    Sticky menu open end
+
+
 });

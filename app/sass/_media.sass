@@ -8,6 +8,8 @@
 
 //Large: ≥992px
 +media-breakpoint-down(lg)
+  .sticky-bar
+    display: none
   .main-slider
     .slick-dots
       left: calc(50% - 480px + 15px)
@@ -15,7 +17,10 @@
       left: calc(50% + 480px - 135px)
     .slick-next
       left: calc(50% + 480px - 70px)
-
+  .stage-work .stage-r .stage-i .num-s:not(.last):after
+    width: 102px
+    background-size: contain
+    left: 30px
 //Medium: ≥768px
 +media-breakpoint-down(md)
   .main-slider
@@ -25,6 +30,10 @@
       left: calc(50% + 360px - 135px)
     .slick-next
       left: calc(50% + 360px - 70px)
+  .stage-work .stage-r .stage-i .num-s:not(.last):after
+    display: none
+  .stage-work .stage-r .stage-i
+    margin-bottom: 30px
   .content
     table
       overflow-x: scroll
@@ -68,8 +77,45 @@
     margin-left: 0px
   .product-sec .prod-cat-r .col-12
     margin: 0px
+  .quest-sec .polit-msg
+    max-width: 67%
+  .quest-sec .content p br
+    display: none
 //Extra small: >0
 +media-breakpoint-down(xs)
+  #my-footer 
+    .logo-f
+      text-align: center
+      margin-bottom: 30px
+      img
+        width: 58px
+        margin: auto
+  #my-footer .f-ul li a
+    display: block
+    text-align: center
+  #my-footer .contact-f p
+    text-align: center
+  #my-footer .contact-f .svg-c
+    display: none
+  #my-footer
+    .contact-fc
+      width: 100%
+      margin-top: 15px
+  #my-footer .polit-usr a
+    text-align: center
+  .quest-sec .polit-msg
+    max-width: 100%
+  .callBack-b
+    flex-direction: column
+    .btn-accent
+      width: 100%
+      margin: 0px
+    input
+      width: 100%
+      margin: 0px
+      margin-bottom: 15px
+  .quest-sec .polit-msg
+    text-align: center
   .main-slider .item
     max-height: 70vh
   #my-header .lvl1-r .logo-h
