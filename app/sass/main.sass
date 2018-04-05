@@ -226,6 +226,7 @@ input
 	align-items: center
 	justify-content: flex-start
 	padding-top: 3px
+
 .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
 	height: 2px
 	background: $dark
@@ -418,8 +419,9 @@ html.mm-opening .mm-menu~.mm-slideout
 		//	top: 0px
 	table
 		width: 100%
+		margin-bottom: 20px
 		tbody
-			min-width: 700px
+			//min-width: 700px
 		&.compectCount
 			.prev-prod
 				width: 60px
@@ -434,12 +436,24 @@ html.mm-opening .mm-menu~.mm-slideout
 				border: solid 1px #d9d9d9
 		tr
 			&:nth-child(odd)
-				background: #f7f7f7
+				//background: #f7f7f7
+			&:nth-child(1)
+				td
+					font-weight: 900
+					font-size: 14px
+					text-align: center
+			strong
+				font-weight: 900
+				font-size: 14px
+				text-align: center
+				display: block
 			td, th
 				border: solid 1px #d9d9d9
-				padding-left: 15px
-				padding-right: 15px
-				text-align: center
+				padding-left: 5px
+				padding-right: 5px
+				text-align: left
+				font-size: 11px
+				font-weight: 700
 	ul
 		list-style: none
 		margin-top: 20px
@@ -690,6 +704,8 @@ html.mm-opening .mm-menu~.mm-slideout
 		justify-content: center
 		align-items: center
 		display: flex
+		.row
+			width: 100%
 	.h4
 		color: #FFFFFF
 		font-size: 25px
@@ -1537,6 +1553,7 @@ html.mm-opening .mm-menu~.mm-slideout
 		.close-btn
 			cursor: pointer
 			background: transparent
+			border: none
 	ul
 		padding: 0px
 		margin: 0px
@@ -1579,10 +1596,17 @@ html.mm-opening .mm-menu~.mm-slideout
 		margin-top: 10px
 		padding-top: 3px
 		margin-top: 45px
+		&.is-active
+			.hamburger-inner:after, .hamburger-inner:before
+				left: 0px
+			.hamburger-inner
+				left: 10px
 	.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
 		height: 2px
 		background: #FFFFFF
 		width: 16px
+		left: 50%
+		transform: translateX(-50%)
 	.hamburger--emphatic .hamburger-inner:after
 		top: 7px
 	.hamburger-inner:before
@@ -1875,6 +1899,8 @@ html.mm-opening .mm-menu~.mm-slideout
 					border-width: 10px 5px 0 5px
 					border-color: $accent2 transparent transparent transparent
 					transition: all .3s ease
+					left: 50%
+					transform: translateX(-50%)
 			.num-s
 				background: $accent
 				color: #FFFFFF
@@ -1889,13 +1915,15 @@ html.mm-opening .mm-menu~.mm-slideout
 				position: relative
 				margin-bottom: 15px
 			.txt-s
+				width: 100%
 				p
 					font-size: 14px
 					font-weight: 700
 					margin-bottom: 0px
 					text-align: center
 					line-height: 1.2
-
+					max-width: 100%
+					width: 100%
 .btn-trigger
 	display: flex
 	justify-content: space-between
@@ -1963,7 +1991,176 @@ html.mm-opening .mm-menu~.mm-slideout
 			margin-bottom: 0px
 		.prod-ci
 			border: solid 1px $grey
+.subcat-page
+	.content
+		h2,.h2
+			margin-top: 0px
+		h1, .h1
+			margin-top: 0px
 
+.price-card
+	.price-card-r
+		margin-left: -7px
+		margin-right: -7px
+		.col-12
+			padding-left: 7px
+			padding-right: 7px
+			margin-bottom: 14px
+		.pc-item
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			.prev
+				width: 100%
+				height: 160px
+				background-size: cover
+				background-position: center
+				background-repeat: no-repeat
+			.link-t
+				font-weight: 700
+				font-size: 14px
+				text-align: center
+				margin-top: 20px
+				display: block
+				margin-bottom: 10px
+			.info-pr
+				.price-c
+					display: flex
+					justify-content: center
+					align-items: flex-end
+					.price-i
+						font-weight: 900
+						font-size: 20px
+						line-height: 1
+					.rub
+						font-weight: 900
+						font-size: 12px
+						padding-left: 5px
+					a
+						font-weight: 700
+						font-size: 14px
+	.btn-c
+		margin-top: 26px
+		text-align: center
+		.btn-accent
+			padding: 13px 60px
+
+.subcat-page
+	.quest-sec
+		border-top: solid 1px $grey
+		padding-top: 50px
+
+.pubricator
+	.quest-sec
+		border-top: solid 1px $grey
+		padding-top: 50px
+.goods-page
+	.quest-sec
+		border-top: solid 1px $grey
+		padding-top: 50px
+.rubric-r
+	margin-right: -10px
+	margin-left: -10px
+	.rub-item
+		display: flex
+		height: 100%
+		justify-content: space-between
+		flex-direction: column
+	.col-12
+		padding-left: 10px
+		padding-right: 10px
+		margin-bottom: 38px
+	.h3
+		font-size: 18px
+		font-weight: 900
+		text-align: center
+		margin-bottom: 10px
+	.prev
+		height: 203px
+		margin-bottom: 5px
+	.btn-accent
+		border-radius: 2px
+		width: 100%
+.rubricator-sec
+	.h2
+		margin-bottom: 52px
+		margin-top: 42px
+
+
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+	background-color: $accent
+.mCS-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar
+	background-color: $accent
+
+.goods-ccc
+	.content
+		h1
+			text-transform: none
+			margin-top: 0px
+		table
+			overflow: auto
+			white-space: nowrap
+			width: 100%
+			display: block
+			position: relative
+			img
+				max-width: 100%
+			tr
+				td, th
+					padding: 5px 15px
+			&:hover
+				.btn-half-acc-r, .btn-half-acc-l
+					display: block
+		.btn-half-acc-r
+			position: absolute
+			top: 50%
+			transform: translateY(-50%) rotate(180deg)
+			z-index: 3
+			display: none
+			right: 0px
+			padding-right: 7px
+			.svg-c
+				transform: rotate(180deg)
+		.btn-half-acc-l
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			z-index: 3
+			display: none
+			left: 0px
+			.svg-c
+				transform: rotate(180deg)
+				padding-left: 7px
+.btn-half-acc
+	width: 26px
+	height: 52px
+	position: relative
+	overflow: hidden
+	background: transparent
+	cursor: pointer
+	border: none
+	padding: 0px
+	display: block
+	&.btn-half-acc-r-tpl
+		display: none
+	.svg-c
+		position: relative
+		z-index: 3
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+		height: 100%
+	&:after
+		content: ''
+		position: absolute
+		background: $accent
+		width: 52px
+		height: 52px
+		top: 0px
+		right: 0px
+		border-radius: 100%
 /*Project end*/
 
 
